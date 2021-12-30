@@ -36,7 +36,12 @@ export default function ContactModal({
     e.preventDefault();
     setIsSending(true);
     emailjs
-      .sendForm("gmail", "default", e.target, process.env.REACT_APP_USER_ID)
+      .sendForm(
+        process.env.REACT_APP_SERVICE_ID!,
+        process.env.REACT_APP_TEMPLATE_ID!,
+        e.target,
+        process.env.REACT_APP_USER_ID
+      )
       .then((res) => {
         setIsSending(false);
         setName("");

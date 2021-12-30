@@ -66,7 +66,7 @@ export default function Navbar({ handleContactModal }: Props): ReactElement {
           _hover={theme["accent"]}
         >
           <AiOutlineLaptop size={20} color={theme["accent"]} />
-          <AnimatedArrow />
+          {/* <AnimatedArrow /> */}
         </Button>
 
         <Button

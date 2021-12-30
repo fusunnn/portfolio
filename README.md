@@ -1,4 +1,4 @@
-# Ivan Audouard Portfolio
+# Ivan Audouard;s Portfolio
 
 ## This is my portfolio that is being built with React TS, Chakra UI, Tailwind CSS and framer-motion.
 

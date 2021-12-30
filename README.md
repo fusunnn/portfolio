@@ -1,4 +1,6 @@
-This is my portfolio that is being built with React TS, Chakra UI, Tailwind CSS and framer-motion.
+# Ivan Audouard Portfolio
+
+## This is my portfolio that is being built with React TS, Chakra UI, Tailwind CSS and framer-motion.
 
 To modify and make it your own you can start by cloning it:
 

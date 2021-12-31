@@ -1,4 +1,10 @@
-import React, { ReactElement, useState, useRef, useContext } from "react";
+import React, {
+  ReactElement,
+  useState,
+  useRef,
+  useContext,
+  useEffect,
+} from "react";
 
 import { ThemeContext } from "../context/ThemeContext";
 
@@ -12,6 +18,7 @@ import { store } from "react-notifications-component";
 import emailjs from "emailjs-com";
 
 import { motion } from "framer-motion";
+import useWindowSize from "../helpers/WindowSizeHook";
 
 interface Props {
   isVisible: boolean;
@@ -29,6 +36,8 @@ export default function ContactModal({
   const [message, setMessage] = useState<string>("");
 
   const { theme } = useContext(ThemeContext);
+
+  const windowSize = useWindowSize();
 
   const modalRef = useRef<HTMLDivElement>(null);
 
@@ -100,7 +109,13 @@ export default function ContactModal({
           onClick={(e) => handleCloseModal(e)}
         >
           <motion.div
-            className="flex flex-col w-2/5 h-auto absolute m-auto rounded-lg items-center justify-center"
+            className={`flex flex-col ${
+              windowSize.width! <= 1000
+                ? windowSize.width! <= 600
+                  ? "w-4/5"
+                  : "w-3/5"
+                : "w-2/5"
+            } h-auto absolute m-auto rounded-lg items-center justify-center`}
             style={{ backgroundColor: theme["accent"] }}
             key="modal"
             initial={{ y: -20, opacity: 0 }}

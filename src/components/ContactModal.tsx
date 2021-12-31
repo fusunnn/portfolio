@@ -104,7 +104,7 @@ export default function ContactModal({
     <>
       {isVisible ? (
         <div
-          className="w-screen h-screen bg-black bg-opacity-30 absolute flex justify-center items-center"
+          className="w-screen h-screen bg-black bg-opacity-30 fixed flex justify-center items-center"
           ref={modalRef}
           onClick={(e) => handleCloseModal(e)}
         >
